@@ -1,0 +1,1 @@
+This program solves 4 independent programs concurrently by using fork.
