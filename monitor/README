@@ -1,0 +1,13 @@
+Solves the classic problem of missionaries and cannibuls crossing a river using monitors as a form of concurrency control.
+LOGIC:
+he program creates the cannibals and the missionaries, along
+with a boat and an initialization thread. The initialization
+thread sets the monitor then closes and allows the rest to start
+up. The missionaries and cannibals run in an infinite loop while 
+the boat runs b times. Each person attempts to enter a boat, with 
+some limitations such as a maximum of three passangers and less
+cannibals then missionaries or all cannibals on the boat. If a
+person gets on the boat they wait until they are dropped off by
+the boat. Any body who tries to enter the boat after its full
+has to wait and try again later. After the boat runs b times
+anybody who tries to enter the boat is sent away.
