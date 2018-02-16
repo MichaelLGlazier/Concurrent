@@ -1,0 +1,21 @@
+Uses threads, semaphores, and mutex locks to solve a concurent feeding problem.
+LOGIC:
+The program first initializes an array of pots that can be
+eaten from twice, along with a semaphore equal to the number 
+of pots. The baby eagles are each initialize with a favorite
+pot that they prefer to eat from in order to encourage 
+concurency. When an eagle is done playing it will wait for a
+pot, if one is available, it goes to eat at its favorite pot 
+first. It waits if the pot is being used by another eagle
+, and then if the pot is empty when it gets to it, it moves
+on to the next pot. It does this for each pot until it eats or
+until it tries every pot. If it doesn't get to eat it leaves
+the feeding area, and does not signal for another eagle to 
+come in. If it does eat it signals that it is done so that
+another eagle may come in. The last baby eagle to leave the 
+feading area signals the mother who will wake up, and then fill
+all the pots. After she fills the pots she will signal to all
+the babies that they no longer have to wait to eat. The program
+keeps track of how many cycles the babies have ate, so that on
+the last cycle they will not try to call mom, and instead will
+just exit.
